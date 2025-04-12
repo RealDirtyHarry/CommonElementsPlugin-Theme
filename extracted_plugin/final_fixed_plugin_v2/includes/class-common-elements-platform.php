@@ -75,6 +75,8 @@ class Common_Elements_Platform {
                 $this->define_forum_hooks();
                 $this->define_membership_hooks();
                 $this->define_theme_integration_hooks();
+                $this->define_learning_hooks();
+
         }
                 $this->define_widget_hooks();
 
@@ -315,6 +317,16 @@ class Common_Elements_Platform {
                     $this->loader->add_filter( 'mpcs_certificate_template', $plugin_membership, 'certificate_template' );
                 }
         }
+
+        /**
+         * Register all of the hooks related to learning hub functionality.
+         *
+         * @since    1.0.0
+         * @access   private
+         */
+        private function define_learning_hooks() {
+        }
+
 
         /**
          * Register all of the hooks related to theme integration.

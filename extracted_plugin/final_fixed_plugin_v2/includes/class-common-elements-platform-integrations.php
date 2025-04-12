@@ -17,6 +17,9 @@ class Common_Elements_Platform_Integrations {
         // Initialize integrations based on active plugins
         add_action('plugins_loaded', array($this, 'initialize_integrations'));
     }
+        add_action('activated_plugin', array($this, 'handle_plugin_activation'), 10, 1);
+        add_action('deactivated_plugin', array($this, 'handle_plugin_deactivation'), 10, 1);
+
 
     /**
      * Initialize integrations with third-party plugins
@@ -80,6 +83,45 @@ class Common_Elements_Platform_Integrations {
         }
 
         return false;
+    }
+
+
+    /**
+     * Handle activation of a specific plugin to potentially initialize integration.
+     *
+     * @param string $plugin Plugin path relative to plugins directory.
+     */
+    public function handle_plugin_activation($plugin) {
+        switch ($plugin) {
+            case 'buddypress/bp-loader.php':
+                $this->initialize_buddypress_integration();
+                break;
+            case 'bbpress/bbpress.php':
+                $this->initialize_bbpress_integration();
+                break;
+            case 'memberpress/memberpress.php':
+                $this->initialize_memberpress_integration();
+                break;
+            case 'memberpress-courses/main.php':
+                $this->initialize_memberpress_courses_integration();
+                break;
+            case 'gravityforms/gravityforms.php':
+                $this->initialize_gravityforms_integration();
+                break;
+            case 'gravityview/gravityview.php':
+                $this->initialize_gravityview_integration();
+                break;
+        }
+    }
+
+    /**
+     * Handle deactivation of a specific plugin to potentially clean up integration.
+     * (Currently, no specific cleanup actions are defined, but the hook is present).
+     *
+     * @param string $plugin Plugin path relative to plugins directory.
+     */
+    public function handle_plugin_deactivation($plugin) {
+        error_log('Plugin deactivated: ' . $plugin . ' - Common Elements integration check.');
     }
 
     /**
