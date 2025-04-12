@@ -561,16 +561,6 @@ class Common_Elements_Platform_Theme_Integration {
     }
 
     /**
-     * Register plugin widgets
-     */
-    public function register_widgets() {
-        // Register plugin widgets
-        register_widget('Common_Elements_Dashboard_Widget');
-        register_widget('Common_Elements_RFP_Widget');
-        register_widget('Common_Elements_Directory_Widget');
-    }
-
-    /**
      * Register plugin shortcodes
      */
     private function register_shortcodes() {

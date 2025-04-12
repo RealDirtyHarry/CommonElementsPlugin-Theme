@@ -76,6 +76,8 @@ class Common_Elements_Platform {
                 $this->define_membership_hooks();
                 $this->define_theme_integration_hooks();
         }
+                $this->define_widget_hooks();
+
 
         /**
          * Load the required dependencies for this plugin.
@@ -330,6 +332,28 @@ class Common_Elements_Platform {
                 $this->loader->add_action( 'wp_enqueue_scripts', $plugin_theme_integration, 'enqueue_assets' );
                 // Add custom template redirect for plugin pages
                 $this->loader->add_action( 'template_redirect', $plugin_theme_integration, 'template_redirect' );
+        }
+
+
+        /**
+         * Register all of the hooks related to widget registration.
+         *
+         * @since    1.0.0
+         * @access   private
+         */
+        private function define_widget_hooks() {
+                $this->loader->add_action( 'widgets_init', $this, 'register_core_widgets' );
+        }
+
+        /**
+         * Register core plugin widgets.
+         *
+         * @since    1.0.0
+         */
+        public function register_core_widgets() {
+                register_widget('Common_Elements_Dashboard_Widget');
+                register_widget('Common_Elements_RFP_Widget');
+                register_widget('Common_Elements_Directory_Widget');
         }
 
         /**
