@@ -5,13 +5,13 @@
  */
 
 /* General Styles */
-.ce-container {
+.container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
 
-.ce-section {
+.section {
     margin-bottom: var(--spacing-2xl);
 }
 
@@ -785,7 +785,7 @@
     margin: 0 0 var(--spacing-xs);
 }
 
-.ce-course-instructor {
+.course-instructor {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-medium);
     font-size: var(--font-size-sm);
@@ -837,7 +837,7 @@
     border-radius: var(--border-radius-full);
 }
 
-.ce-progress-text {
+.progress-text {
     display: flex;
     justify-content: space-between;
     font-family: var(--font-primary);
@@ -880,7 +880,7 @@
     margin: 0;
 }
 
-.ce-lesson-duration {
+.lesson-duration {
     margin-left: auto;
     font-family: var(--font-primary);
     font-weight: var(--font-weight-normal);
@@ -888,7 +888,7 @@
     color: var(--neutral-600);
 }
 
-.ce-lesson-content {
+.lesson-content {
     margin-bottom: var(--spacing-lg);
 }
 
