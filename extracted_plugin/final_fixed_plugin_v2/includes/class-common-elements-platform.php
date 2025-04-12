@@ -68,7 +68,7 @@ class Common_Elements_Platform {
                 $this->set_locale();
                 $this->define_admin_hooks();
                 $this->define_public_hooks();
-                $this->define_post_types();
+                $this->define_post_types_hooks();
                 $this->define_dashboard_hooks();
                 $this->define_rfp_hooks();
                 $this->define_directory_hooks();
@@ -239,7 +239,7 @@ class Common_Elements_Platform {
          * @since    1.0.0
          * @access   private
          */
-        private function define_post_types() {
+        private function define_post_types_hooks() { // Renamed for clarity
                 $plugin_post_types = new Common_Elements_Platform_Post_Types();
                 $this->loader->add_action( 'init', $plugin_post_types, 'register_post_types' );
                 $this->loader->add_action( 'init', $plugin_post_types, 'register_taxonomies' );
