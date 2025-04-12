@@ -1,0 +1,269 @@
+/**
+ * Common Elements Platform Admin Styles
+ *
+ * Improved styling for the plugin admin interface
+ */
+
+/* General Admin Styling */
+.common-elements-admin-page {
+    max-width: 1200px;
+    margin: 20px 0;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.common-elements-admin-header {
+    background: #0063CE;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 20px;
+}
+
+.common-elements-admin-header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.common-elements-admin-content {
+    padding: 0 20px 20px;
+}
+
+/* Admin Tabs */
+.common-elements-admin-tabs {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.common-elements-admin-tabs .nav-tab {
+    margin-left: 0;
+    margin-right: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+    background: #f7f7f7;
+    border-color: #ddd;
+}
+
+.common-elements-admin-tabs .nav-tab-active {
+    background: #fff;
+    border-bottom-color: #fff;
+    color: #0063CE;
+}
+
+/* Admin Cards */
+.common-elements-admin-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.common-elements-admin-card-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    background: #f7f7f7;
+    border-radius: 5px 5px 0 0;
+}
+
+.common-elements-admin-card-header h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.common-elements-admin-card-content {
+    padding: 20px;
+}
+
+/* Admin Forms */
+.common-elements-admin-form .form-table th {
+    width: 200px;
+    padding: 20px 10px 20px 0;
+}
+
+.common-elements-admin-form .form-table td {
+    padding: 15px 10px;
+}
+
+.common-elements-admin-form input[type="text"],
+.common-elements-admin-form input[type="url"],
+.common-elements-admin-form input[type="email"],
+.common-elements-admin-form input[type="number"],
+.common-elements-admin-form input[type="tel"],
+.common-elements-admin-form select,
+.common-elements-admin-form textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.common-elements-admin-form input[type="checkbox"],
+.common-elements-admin-form input[type="radio"] {
+    margin-right: 8px;
+}
+
+.common-elements-admin-form label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+/* Directory Meta Boxes */
+.directory-details-meta-box,
+.directory-contact-meta-box,
+.directory-social-meta-box {
+    padding: 10px 0;
+}
+
+.directory-location-fields {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.directory-location-fields p {
+    flex: 1;
+    min-width: 200px;
+    padding: 0 10px;
+    margin-bottom: 15px;
+}
+
+/* Dashboard Widgets */
+.common-elements-dashboard-widgets {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.common-elements-dashboard-widget {
+    flex: 1;
+    min-width: 300px;
+    margin: 0 10px 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.common-elements-dashboard-widget-header {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    background: #f7f7f7;
+    border-radius: 5px 5px 0 0;
+}
+
+.common-elements-dashboard-widget-header h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.common-elements-dashboard-widget-content {
+    padding: 15px;
+}
+
+/* Admin Notices */
+.common-elements-admin-notice {
+    background: #fff;
+    border-left: 4px solid #0063CE;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    margin: 15px 0;
+    padding: 12px;
+}
+
+.common-elements-admin-notice.success {
+    border-left-color: #46b450;
+}
+
+.common-elements-admin-notice.error {
+    border-left-color: #dc3232;
+}
+
+.common-elements-admin-notice.warning {
+    border-left-color: #ffb900;
+}
+
+.common-elements-admin-notice.info {
+    border-left-color: #00a0d2;
+}
+
+/* Admin Buttons */
+.common-elements-admin-button {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #0063CE;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.common-elements-admin-button:hover {
+    background: #004fa5;
+    color: #fff;
+}
+
+.common-elements-admin-button.secondary {
+    background: #f7f7f7;
+    color: #555;
+    border: 1px solid #ccc;
+}
+
+.common-elements-admin-button.secondary:hover {
+    background: #f0f0f0;
+    color: #333;
+}
+
+/* Admin Tables */
+.common-elements-admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.common-elements-admin-table th,
+.common-elements-admin-table td {
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.common-elements-admin-table th {
+    background: #f7f7f7;
+    font-weight: 600;
+}
+
+.common-elements-admin-table tr:hover {
+    background: #f9f9f9;
+}
+
+/* Responsive Admin */
+@media screen and (max-width: 782px) {
+    .common-elements-admin-form .form-table th {
+        width: 100%;
+        display: block;
+        padding-bottom: 0;
+    }
+    
+    .common-elements-admin-form .form-table td {
+        width: 100%;
+        display: block;
+        padding-top: 5px;
+    }
+    
+    .directory-location-fields p {
+        width: 100%;
+    }
+}

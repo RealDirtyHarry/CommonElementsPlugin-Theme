@@ -1,0 +1,12 @@
+:root {
+    /* Primary Colors */
+    --primary-color: #2E7D32;
+    --primary-dark: #1B5E20;
+    --primary-light: #4CAF50;
+    
+    --secondary-color: #FF8A00;
+    --secondary-dark: #e67a00;
+    --secondary-light: #ffa133;
+}
+
+/* All other styles inherit from blue.css */

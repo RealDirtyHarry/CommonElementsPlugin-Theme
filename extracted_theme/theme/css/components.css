@@ -1,3 +1,37 @@
+/* Basic Focus Styles */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid rgba(var(--primary-rgb, 0, 99, 206), 0.6); /* Use RGB variable for translucent outline */
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb, 0, 99, 206), 0.3); /* Add a subtle glow */
+}
+
+/* Remove default outline when custom focus is applied */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Ensure high contrast focus for Windows High Contrast Mode */
+@media screen and (-ms-high-contrast: active) {
+  a:focus,
+  button:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 2px solid transparent; /* Use transparent outline and rely on system colors */
+    box-shadow: 0 0 0 2px ButtonText; /* Use system text color for shadow */
+  }
+}
+
+
 /* Basic Focus Outline for Accessibility */
 a:focus-visible,
 button:focus-visible,

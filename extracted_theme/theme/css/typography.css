@@ -1,0 +1,302 @@
+/* Typography enhancements based on concept design */
+
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+/* Base Typography */
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-normal);
+    color: var(--neutral-900);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-tight);
+    color: var(--color-text-dark);
+}
+
+h1 {
+    font-size: var(--font-size-4xl);
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: var(--font-size-3xl);
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: var(--font-size-xxl);
+}
+
+h4 {
+    font-size: var(--font-size-xl);
+}
+
+h5 {
+    font-size: var(--font-size-lg);
+}
+
+h6 {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+}
+
+/* Paragraphs */
+p {
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+a:hover {
+    color: var(--primary-light);
+}
+
+/* Text Utilities */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-secondary {
+    color: var(--secondary-color) !important;
+}
+
+.text-success {
+    color: var(--success-color) !important;
+}
+
+.text-danger {
+    color: var(--error-color) !important;
+}
+
+.text-warning {
+    color: var(--warning-color) !important;
+}
+
+.text-info {
+    color: var(--info-color) !important;
+}
+
+.text-light {
+    color: var(--neutral-600) !important;
+}
+
+.text-dark {
+    color: var(--color-text-dark) !important;
+}
+
+.text-muted {
+    color: var(--color-text-lighter) !important;
+}
+
+.text-small {
+    font-size: var(--font-size-sm) !important;
+}
+
+.text-large {
+    font-size: var(--font-size-lg) !important;
+}
+
+.text-bold {
+    font-weight: var(--font-weight-bold) !important;
+}
+
+.text-semibold {
+    font-weight: var(--font-weight-semibold) !important;
+}
+
+.text-medium {
+    font-weight: var(--font-weight-medium) !important;
+}
+
+.text-normal {
+    font-weight: var(--font-weight-normal) !important;
+}
+
+.text-light-weight {
+    font-weight: var(--font-weight-light) !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+
+.text-lowercase {
+    text-transform: lowercase !important;
+}
+
+/* Lists */
+ul, ol {
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-xl);
+}
+
+ul li, ol li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-inline-item {
+    display: inline-block;
+    margin-right: var(--spacing-sm);
+}
+
+/* Blockquotes */
+blockquote {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-left: 4px solid var(--primary-color);
+    background-color: var(--neutral-200);
+    font-style: italic;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Code */
+code {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875em;
+    color: var(--primary-dark);
+    background-color: var(--neutral-200);
+    padding: 0.2em 0.4em;
+    border-radius: var(--border-radius-sm);
+}
+
+pre {
+    display: block;
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+    overflow: auto;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875em;
+    color: var(--neutral-900);
+    background-color: var(--neutral-200);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+}
+
+pre code {
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+}
+
+/* Dashboard-specific typography */
+.dashboard-title {
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-lg);
+}
+
+.dashboard-subtitle {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    color: var(--neutral-600);
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--neutral-300);
+}
+
+.widget-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.stat-value {
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--neutral-600);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Form typography */
+label {
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-xs);
+}
+
+.form-text {
+    font-size: var(--font-size-sm);
+    color: var(--neutral-600);
+    margin-top: var(--spacing-xs);
+}
+
+/* Navigation typography */
+.nav-link {
+    font-weight: var(--font-weight-medium);
+}
+
+.nav-link.active {
+    font-weight: var(--font-weight-semibold);
+}
+
+.dropdown-item {
+    font-weight: var(--font-weight-normal);
+}
+
+/* Button typography */
+.btn {
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.01em;
+}
