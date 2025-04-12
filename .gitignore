@@ -3,4 +3,6 @@ extracted_plugin/
 extracted_theme/
 
 # Ignore lock files
+node_modules/
+
 package-lock.json
