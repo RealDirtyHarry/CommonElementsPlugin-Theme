@@ -1,0 +1,6 @@
+# Ignore extracted directories
+extracted_plugin/
+extracted_theme/
+
+# Ignore lock files
+package-lock.json
