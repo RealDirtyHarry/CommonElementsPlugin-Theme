@@ -16,10 +16,9 @@ class Common_Elements_Platform_Integrations {
     public function __construct() {
         // Initialize integrations based on active plugins
         add_action('plugins_loaded', array($this, 'initialize_integrations'));
+        add_action('activated_plugin', array($this, 'handle_plugin_activation'), 10, 1); // Moved inside constructor
+        add_action('deactivated_plugin', array($this, 'handle_plugin_deactivation'), 10, 1); // Moved inside constructor
     }
-        add_action('activated_plugin', array($this, 'handle_plugin_activation'), 10, 1);
-        add_action('deactivated_plugin', array($this, 'handle_plugin_deactivation'), 10, 1);
-
 
     /**
      * Initialize integrations with third-party plugins

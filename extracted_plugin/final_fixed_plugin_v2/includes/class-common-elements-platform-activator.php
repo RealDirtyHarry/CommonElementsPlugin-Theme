@@ -30,12 +30,6 @@ class Common_Elements_Platform_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-		// Create custom post types
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-common-elements-platform-post-types.php';
-		$post_types = new Common_Elements_Platform_Post_Types();
-		$post_types->register_post_types();
-		
-		// Flush rewrite rules to ensure our custom post types work
 		flush_rewrite_rules();
 		
 		// Set default options if needed
