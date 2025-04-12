@@ -140,30 +140,65 @@ class Common_Elements_Platform_Theme_Integration {
         
         add_action('widgets_init', array($this, 'register_theme_sidebars'));
         
-        if ( ! method_exists( $this, 'add_before_header_content' ) ) {
-            public function add_before_header_content() {}
-        }
-        if ( ! method_exists( $this, 'add_after_header_content' ) ) {
-            public function add_after_header_content() {}
-        }
-        if ( ! method_exists( $this, 'add_before_footer_content' ) ) {
-            public function add_before_footer_content() {}
-        }
-        if ( ! method_exists( $this, 'add_after_footer_content' ) ) {
-            public function add_after_footer_content() {}
-        }
-        if ( ! method_exists( $this, 'modify_header_menu_items' ) ) {
-            public function modify_header_menu_items( $items ) { return $items; }
-        }
-        if ( ! method_exists( $this, 'modify_dashboard_tabs' ) ) {
-            public function modify_dashboard_tabs( $tabs ) { return $tabs; }
-        }
-        if ( ! method_exists( $this, 'modify_user_roles' ) ) {
-            public function modify_user_roles( $roles ) { return $roles; }
-        }
-        if ( ! method_exists( $this, 'register_theme_sidebars' ) ) {
-            public function register_theme_sidebars() {}
-        }
+    }
+
+
+    /**
+     * Placeholder for theme's before header action.
+     */
+    public function add_before_header_content() {
+    }
+
+    /**
+     * Placeholder for theme's after header action.
+     */
+    public function add_after_header_content() {
+    }
+
+    /**
+     * Placeholder for theme's before footer action.
+     */
+    public function add_before_footer_content() {
+    }
+
+    /**
+     * Placeholder for theme's after footer action.
+     */
+    public function add_after_footer_content() {
+    }
+
+    /**
+     * Placeholder for theme's header menu items filter.
+     * @param array $items Original menu items.
+     * @return array Menu items.
+     */
+    public function modify_header_menu_items( $items ) {
+        return $items;
+    }
+
+    /**
+     * Placeholder for theme's dashboard tabs filter.
+     * @param array $tabs Original dashboard tabs.
+     * @return array Dashboard tabs.
+     */
+    public function modify_dashboard_tabs( $tabs ) {
+        return $tabs;
+    }
+
+    /**
+     * Placeholder for theme's user roles filter.
+     * @param array $roles Original user roles.
+     * @return array User roles.
+     */
+    public function modify_user_roles( $roles ) {
+        return $roles;
+    }
+
+    /**
+     * Placeholder for theme's sidebar registration action.
+     */
+    public function register_theme_sidebars() {
+    }
     }
 
     /**
