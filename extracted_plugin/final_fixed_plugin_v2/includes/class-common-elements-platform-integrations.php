@@ -424,6 +424,12 @@ class Common_Elements_Platform_Integrations {
             return;
         }
 
+		if ( ! current_user_can( 'publish_posts' ) ) {
+			error_log('Security Warning: process_rfp_submission called without sufficient capability.');
+			return; // Stop processing if capability check fails
+		}
+
+
         // Get form data
         $title = rgar($entry, $this->get_field_id($form, 'title'));
         $description = rgar($entry, $this->get_field_id($form, 'description'));
@@ -500,6 +506,12 @@ class Common_Elements_Platform_Integrations {
             return;
         }
         
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			error_log('Security Warning: process_proposal_submission called without sufficient capability.');
+			return; // Stop processing if capability check fails
+		}
+
+
         // Create proposal post
         $proposal_data = array(
             'post_title'    => $title,

@@ -50,14 +50,11 @@ class Common_Elements_Platform_RFP {
 			return;
 		}
 		
-		// Check user capabilities
-		$user = wp_get_current_user();
-		$roles = (array) $user->roles;
-		
-		if ( ! ( in_array( 'administrator', $roles ) || in_array( 'editor', $roles ) || in_array( 'author', $roles ) ) ) {
-			wp_send_json_error( array( 'message' => 'Insufficient permissions' ) );
+		if ( ! current_user_can( 'publish_posts' ) ) {
+			wp_send_json_error( array( 'message' => 'Insufficient permissions to submit RFPs.' ) );
 			return;
 		}
+		$user = wp_get_current_user(); // Still need user object for author ID
 		
 		// Validate required fields
 		$required_fields = array( 'title', 'description', 'deadline', 'community' );
@@ -138,14 +135,11 @@ class Common_Elements_Platform_RFP {
 			return;
 		}
 		
-		// Check user capabilities
-		$user = wp_get_current_user();
-		$roles = (array) $user->roles;
-		
-		if ( ! in_array( 'contributor', $roles ) ) {
-			wp_send_json_error( array( 'message' => 'Only vendors can submit proposals' ) );
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			wp_send_json_error( array( 'message' => 'Insufficient permissions to submit proposals.' ) );
 			return;
 		}
+		$user = wp_get_current_user(); // Still need user object for author ID
 		
 		// Validate required fields
 		$required_fields = array( 'rfp_id', 'title', 'description', 'price' );

@@ -44,35 +44,32 @@ class Common_Elements_Platform_Dashboard {
 		}
 		
 		$user = wp_get_current_user();
-		$roles = (array) $user->roles;
 		$dashboard_type = isset( $_POST['dashboard_type'] ) ? sanitize_text_field( $_POST['dashboard_type'] ) : 'member';
 		
-		// Prepare dashboard data based on user role
 		$data = array(
 			'user_id' => $user->ID,
 			'user_name' => $user->display_name,
-			'dashboard_type' => $dashboard_type,
+			'dashboard_type' => $dashboard_type, // Keep requested type for potential frontend logic
 		);
 		
-		// Add role-specific data
-		if ( in_array( 'administrator', $roles ) || in_array( 'editor', $roles ) ) {
-			// Board member dashboard data
+		if ( current_user_can( 'manage_options' ) ) { // Typically Admins/Editors
+			$data['dashboard_type'] = 'board'; // Set actual type based on capability
 			$data['recent_rfps'] = $this->get_recent_rfps();
 			$data['recent_proposals'] = $this->get_recent_proposals();
 			$data['community_stats'] = $this->get_community_stats();
 			$data['learning_stats'] = $this->get_learning_stats();
-		} elseif ( in_array( 'author', $roles ) ) {
-			// CAM professional dashboard data
+		} elseif ( current_user_can( 'publish_posts' ) ) { // Typically Authors (CAM Professionals)
+			$data['dashboard_type'] = 'cam';
 			$data['assigned_communities'] = $this->get_assigned_communities( $user->ID );
 			$data['recent_rfps'] = $this->get_recent_rfps();
 			$data['learning_progress'] = $this->get_learning_progress( $user->ID );
-		} elseif ( in_array( 'contributor', $roles ) ) {
-			// Vendor dashboard data
+		} elseif ( current_user_can( 'edit_posts' ) ) { // Typically Contributors (Vendors)
+			$data['dashboard_type'] = 'vendor';
 			$data['open_rfps'] = $this->get_open_rfps();
 			$data['my_proposals'] = $this->get_user_proposals( $user->ID );
 			$data['directory_listing'] = $this->get_vendor_listing( $user->ID );
-		} else {
-			// Regular member dashboard data
+		} else { // Regular logged-in user (Subscriber role or similar)
+			$data['dashboard_type'] = 'member';
 			$data['recent_forum_topics'] = $this->get_recent_forum_topics();
 			$data['recent_classifieds'] = $this->get_recent_classifieds();
 		}
