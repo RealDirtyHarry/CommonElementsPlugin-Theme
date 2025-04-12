@@ -1,0 +1,20 @@
+{
+  "name": "commonelementsplugin-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "minify:css": "cleancss -o extracted_plugin/final_fixed_plugin_v2/assets/css/common-elements-platform-public.min.css extracted_plugin/final_fixed_plugin_v2/assets/css/common-elements-platform-public.css",
+    "minify:js:plugin": "uglifyjs extracted_plugin/final_fixed_plugin_v2/assets/js/common-elements-platform-public.js -o extracted_plugin/final_fixed_plugin_v2/assets/js/common-elements-platform-public.min.js -c -m",
+    "minify:js:theme": "uglifyjs extracted_theme/theme/js/navigation.js -o extracted_theme/theme/js/navigation.min.js -c -m && uglifyjs extracted_theme/theme/js/main.js -o extracted_theme/theme/js/main.min.js -c -m",
+    "build": "npm run minify:css && npm run minify:js:plugin && npm run minify:js:theme"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "uglify-js": "^3.19.3"
+  }
+}
