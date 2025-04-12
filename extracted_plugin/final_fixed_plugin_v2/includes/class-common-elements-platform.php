@@ -76,10 +76,8 @@ class Common_Elements_Platform {
                 $this->define_membership_hooks();
                 $this->define_theme_integration_hooks();
                 $this->define_learning_hooks();
-
+                $this->define_widget_hooks(); // Moved inside constructor
         }
-                $this->define_widget_hooks();
-
 
         /**
          * Load the required dependencies for this plugin.
