@@ -150,6 +150,11 @@ class Common_Elements_Platform {
                 require_once COMMON_ELEMENTS_PLATFORM_DIR . 'includes/class-common-elements-platform-rfp.php';
 
                 /**
+                 * The class responsible for RFP post types and taxonomies.
+                 */
+                require_once COMMON_ELEMENTS_PLATFORM_DIR . 'includes/class-common-elements-platform-rfp-post-types.php';
+
+                /**
                  * The class responsible for directory functionality.
                  */
                 require_once COMMON_ELEMENTS_PLATFORM_DIR . 'includes/class-common-elements-platform-directory.php';
@@ -281,7 +286,13 @@ class Common_Elements_Platform {
                 $this->loader->add_action( 'init', $plugin_rfp, 'register_rfp_endpoints' );
                 $this->loader->add_action( 'wp_ajax_submit_rfp', $plugin_rfp, 'submit_rfp' );
                 $this->loader->add_action( 'wp_ajax_submit_proposal', $plugin_rfp, 'submit_proposal' );
-
+                
+                $plugin_rfp_post_types = new Common_Elements_Platform_RFP_Post_Types();
+                $this->loader->add_action( 'init', $plugin_rfp_post_types, 'register_post_types' );
+                $this->loader->add_action( 'add_meta_boxes', $plugin_rfp_post_types, 'add_rfp_metaboxes' );
+                $this->loader->add_action( 'save_post_rfp', $plugin_rfp_post_types, 'save_rfp_metabox', 10, 2 );
+                $this->loader->add_action( 'save_post_proposal', $plugin_rfp_post_types, 'save_proposal_metabox', 10, 2 );
+                $this->loader->add_action( 'wp_ajax_ce_ajax_update_proposal_status', $plugin_rfp_post_types, 'update_proposal_status' );
         }
 
         /**
