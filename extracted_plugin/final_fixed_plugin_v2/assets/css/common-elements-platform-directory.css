@@ -1,0 +1,661 @@
+/**
+ * Directory System CSS
+ * 
+ * Styles for the Common Elements directory listings.
+ */
+
+/* Directory Container */
+.ce-directory {
+    margin-bottom: 30px;
+}
+
+/* Directory Header */
+.ce-directory-header {
+    margin-bottom: 20px;
+}
+
+.ce-directory-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    color: #0063CE;
+}
+
+.ce-directory-description {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Directory Search and Filter */
+.ce-directory-controls {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.ce-directory-search {
+    flex: 1;
+    margin-right: 20px;
+    min-width: 200px;
+    margin-bottom: 10px;
+}
+
+.ce-directory-search-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.ce-directory-search-input:focus {
+    border-color: #0063CE;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 99, 206, 0.2);
+}
+
+.ce-directory-filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.ce-directory-filter-item {
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.ce-directory-filter-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.ce-directory-filter select {
+    min-width: 150px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+/* Directory View Toggle */
+.ce-directory-view-toggle {
+    display: flex;
+    margin-left: auto;
+}
+
+.ce-directory-view-button {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.ce-directory-view-button:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.ce-directory-view-button:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.ce-directory-view-button.active {
+    background-color: #0063CE;
+    border-color: #0063CE;
+    color: #fff;
+}
+
+.ce-directory-view-button:not(.active):hover {
+    background-color: #f0f0f0;
+}
+
+.ce-directory-view-icon {
+    font-size: 16px;
+}
+
+/* Directory List View */
+.ce-directory-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.ce-directory-item {
+    width: calc(33.333% - 30px);
+    margin: 0 15px 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ce-directory-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ce-directory-item-image {
+    height: 200px;
+    background-color: #f5f5f5;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.ce-directory-item-featured {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #FF6B00;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.ce-directory-item-content {
+    padding: 20px;
+}
+
+.ce-directory-item-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+
+.ce-directory-item-title a {
+    color: #0063CE;
+    text-decoration: none;
+}
+
+.ce-directory-item-title a:hover {
+    text-decoration: underline;
+}
+
+.ce-directory-item-meta {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.ce-directory-item-meta-item {
+    margin-right: 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.ce-directory-item-meta-icon {
+    margin-right: 5px;
+    color: #0063CE;
+}
+
+.ce-directory-item-description {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+    max-height: 63px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.ce-directory-item-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.ce-directory-item-category {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    background-color: #e3f2fd;
+    color: #0063CE;
+}
+
+.ce-directory-item-rating {
+    display: flex;
+    align-items: center;
+}
+
+.ce-directory-item-rating-stars {
+    color: #FF6B00;
+    margin-right: 5px;
+}
+
+.ce-directory-item-rating-count {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Directory Grid View */
+.ce-directory-grid .ce-directory-item {
+    width: calc(25% - 30px);
+}
+
+.ce-directory-grid .ce-directory-item-image {
+    height: 150px;
+}
+
+.ce-directory-grid .ce-directory-item-content {
+    padding: 15px;
+}
+
+.ce-directory-grid .ce-directory-item-title {
+    font-size: 16px;
+}
+
+.ce-directory-grid .ce-directory-item-description {
+    display: none;
+}
+
+.ce-directory-grid .ce-directory-item-meta {
+    margin-bottom: 0;
+}
+
+/* Directory List View */
+.ce-directory-list-view .ce-directory-item {
+    width: calc(100% - 30px);
+    display: flex;
+    flex-direction: row;
+}
+
+.ce-directory-list-view .ce-directory-item-image {
+    width: 200px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.ce-directory-list-view .ce-directory-item-content {
+    flex-grow: 1;
+}
+
+/* Directory Map View */
+.ce-directory-map-container {
+    display: none;
+    height: 500px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ce-directory-map {
+    width: 100%;
+    height: 100%;
+}
+
+.ce-directory-view-map .ce-directory-map-container {
+    display: block;
+}
+
+.ce-map-info-window {
+    padding: 5px;
+    max-width: 250px;
+}
+
+.ce-map-info-window h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    color: #0063CE;
+}
+
+.ce-map-info-window p {
+    margin: 0 0 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.ce-map-info-window a {
+    display: inline-block;
+    margin-top: 5px;
+    color: #0063CE;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.ce-map-info-window a:hover {
+    text-decoration: underline;
+}
+
+/* Directory Detail */
+.ce-directory-detail {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.ce-directory-detail-header {
+    position: relative;
+}
+
+.ce-directory-detail-cover {
+    height: 300px;
+    background-color: #f5f5f5;
+    background-size: cover;
+    background-position: center;
+}
+
+.ce-directory-detail-logo {
+    position: absolute;
+    bottom: -50px;
+    left: 30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+    border: 5px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ce-directory-detail-content {
+    padding: 30px;
+    padding-top: 60px;
+}
+
+.ce-directory-detail-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    color: #0063CE;
+}
+
+.ce-directory-detail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.ce-directory-detail-meta-item {
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.ce-directory-detail-meta-icon {
+    margin-right: 8px;
+    color: #0063CE;
+    font-size: 16px;
+}
+
+.ce-directory-detail-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ce-directory-detail-rating-stars {
+    color: #FF6B00;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.ce-directory-detail-rating-count {
+    font-size: 14px;
+    color: #666;
+}
+
+.ce-directory-detail-description {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.ce-directory-detail-section {
+    margin-bottom: 30px;
+}
+
+.ce-directory-detail-section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 15px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.ce-directory-detail-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.ce-directory-detail-gallery-item {
+    width: calc(25% - 20px);
+    margin: 0 10px 20px;
+    height: 150px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.ce-directory-detail-gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ce-directory-detail-gallery-item:hover .ce-directory-detail-gallery-image {
+    transform: scale(1.1);
+}
+
+.ce-directory-detail-contact {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.ce-directory-detail-contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.ce-directory-detail-contact-icon {
+    margin-right: 15px;
+    color: #0063CE;
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+}
+
+.ce-directory-detail-contact-content {
+    flex-grow: 1;
+}
+
+.ce-directory-detail-contact-label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.ce-directory-detail-contact-value {
+    color: #333;
+}
+
+.ce-directory-detail-contact-value a {
+    color: #0063CE;
+    text-decoration: none;
+}
+
+.ce-directory-detail-contact-value a:hover {
+    text-decoration: underline;
+}
+
+.ce-directory-detail-map {
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+/* Directory Pagination */
+.ce-directory-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.ce-directory-pagination-item {
+    margin: 0 5px;
+}
+
+.ce-directory-pagination-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.ce-directory-pagination-link:hover {
+    background-color: #f9f9f9;
+    border-color: #0063CE;
+    color: #0063CE;
+}
+
+.ce-directory-pagination-link.active {
+    background-color: #0063CE;
+    border-color: #0063CE;
+    color: #fff;
+}
+
+.ce-directory-pagination-prev .ce-directory-pagination-link,
+.ce-directory-pagination-next .ce-directory-pagination-link {
+    width: auto;
+    padding: 0 15px;
+}
+
+/* Loading State */
+.ce-loading {
+    position: relative;
+    min-height: 200px;
+}
+
+.ce-loading:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    margin-left: -20px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0063CE;
+    border-radius: 50%;
+    animation: ce-spin 1s linear infinite;
+}
+
+@keyframes ce-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .ce-directory-item {
+        width: calc(50% - 30px);
+    }
+    
+    .ce-directory-grid .ce-directory-item {
+        width: calc(33.333% - 30px);
+    }
+    
+    .ce-directory-detail-gallery-item {
+        width: calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 992px) {
+    .ce-directory-grid .ce-directory-item {
+        width: calc(50% - 30px);
+    }
+    
+    .ce-directory-list-view .ce-directory-item {
+        flex-direction: column;
+    }
+    
+    .ce-directory-list-view .ce-directory-item-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .ce-directory-detail-gallery-item {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .ce-directory-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .ce-directory-search {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    
+    .ce-directory-filter {
+        width: 100%;
+    }
+    
+    .ce-directory-view-toggle {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+    
+    .ce-directory-item,
+    .ce-directory-grid .ce-directory-item {
+        width: calc(100% - 30px);
+    }
+    
+    .ce-directory-detail-logo {
+        width: 80px;
+        height: 80px;
+        bottom: -40px;
+    }
+    
+    .ce-directory-detail-content {
+        padding: 20px;
+        padding-top: 50px;
+    }
+}

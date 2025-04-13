@@ -1,0 +1,381 @@
+/**
+ * Dashboard CSS
+ * 
+ * Styles for the Common Elements dashboard and widgets.
+ */
+
+/* Dashboard Layout */
+.ce-dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.ce-dashboard-sidebar {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.ce-dashboard-main {
+    width: 75%;
+    padding: 0 15px;
+}
+
+/* Dashboard Header */
+.ce-dashboard-header {
+    margin-bottom: 30px;
+}
+
+.ce-dashboard-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0063CE;
+    margin: 0 0 10px;
+}
+
+.ce-dashboard-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+}
+
+/* Dashboard Navigation */
+.ce-dashboard-nav {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.ce-dashboard-nav-title {
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+}
+
+.ce-dashboard-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ce-dashboard-nav-item {
+    border-bottom: 1px solid #eee;
+}
+
+.ce-dashboard-nav-item:last-child {
+    border-bottom: none;
+}
+
+.ce-dashboard-nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.ce-dashboard-nav-link:hover {
+    background-color: #f9f9f9;
+    color: #0063CE;
+}
+
+.ce-dashboard-nav-link.active {
+    background-color: #0063CE;
+    color: #fff;
+}
+
+.ce-dashboard-nav-icon {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Dashboard Widgets */
+.ce-dashboard-widgets {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.ce-dashboard-column {
+    width: 50%;
+    padding: 0 15px;
+    min-height: 100px;
+}
+
+.ce-dashboard-widget {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.ce-dashboard-widget-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    cursor: move;
+}
+
+.ce-dashboard-widget-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+
+.ce-dashboard-widget-actions {
+    display: flex;
+    align-items: center;
+}
+
+.ce-dashboard-widget-toggle,
+.ce-dashboard-widget-settings,
+.ce-dashboard-widget-remove {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.ce-dashboard-widget-toggle:hover,
+.ce-dashboard-widget-settings:hover,
+.ce-dashboard-widget-remove:hover {
+    color: #0063CE;
+}
+
+.ce-dashboard-widget-content {
+    padding: 20px;
+}
+
+/* Widget Placeholder */
+.ce-dashboard-widget-placeholder {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 30px;
+    height: 100px;
+}
+
+/* Widget Settings Modal */
+.ce-dashboard-widget-settings-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.ce-dashboard-widget-settings-content {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.ce-dashboard-widget-settings-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ce-dashboard-widget-settings-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.ce-dashboard-widget-settings-close {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.ce-dashboard-widget-settings-close:hover {
+    color: #0063CE;
+}
+
+.ce-dashboard-widget-settings-body {
+    padding: 20px;
+}
+
+.ce-dashboard-widget-settings-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.ce-dashboard-widget-settings-cancel {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #666;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    transition: all 0.2s ease;
+}
+
+.ce-dashboard-widget-settings-cancel:hover {
+    background-color: #f9f9f9;
+}
+
+.ce-dashboard-widget-settings-save {
+    background-color: #0063CE;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 15px;
+    transition: background-color 0.2s ease;
+}
+
+.ce-dashboard-widget-settings-save:hover {
+    background-color: #0052a8;
+}
+
+/* Add Widget Button */
+.ce-dashboard-add-widget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    color: #666;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    height: 100px;
+    margin-bottom: 30px;
+    transition: all 0.2s ease;
+}
+
+.ce-dashboard-add-widget:hover {
+    background-color: #f0f0f0;
+    border-color: #0063CE;
+    color: #0063CE;
+}
+
+.ce-dashboard-add-widget-icon {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+/* Widget Types */
+.ce-dashboard-widget-types {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.ce-dashboard-widget-type {
+    width: 33.333%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.ce-dashboard-widget-type-button {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.2s ease;
+    height: 100%;
+}
+
+.ce-dashboard-widget-type-button:hover {
+    border-color: #0063CE;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.ce-dashboard-widget-type-icon {
+    font-size: 24px;
+    color: #0063CE;
+    margin-bottom: 10px;
+}
+
+.ce-dashboard-widget-type-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.ce-dashboard-widget-type-description {
+    font-size: 12px;
+    color: #666;
+    margin: 5px 0 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .ce-dashboard-sidebar {
+        width: 30%;
+    }
+    
+    .ce-dashboard-main {
+        width: 70%;
+    }
+    
+    .ce-dashboard-widget-type {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .ce-dashboard-sidebar {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .ce-dashboard-main {
+        width: 100%;
+    }
+    
+    .ce-dashboard-column {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .ce-dashboard-widget-type {
+        width: 100%;
+    }
+}
