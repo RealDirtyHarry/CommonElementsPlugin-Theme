@@ -74,6 +74,10 @@ function common_elements_add_dashboard_widgets() {
             'after_title'   => '</h3>',
         )
     );
+    
+    if ( class_exists( 'Common_Elements_Platform_Dashboard_Widget_Manager' ) ) {
+        add_action( 'wp_enqueue_scripts', 'common_elements_enqueue_dashboard_scripts' );
+    }
 }
 add_action( 'widgets_init', 'common_elements_add_dashboard_widgets' );
 
@@ -269,4 +273,85 @@ function common_elements_user_stats_shortcode( $atts ) {
     </div>
     <?php
     return ob_get_clean();
+}
+
+/**
+ * Enqueue dashboard scripts and styles
+ */
+function common_elements_enqueue_dashboard_scripts() {
+    if ( is_page_template( array( 'templates/dashboard-board.php', 'templates/dashboard-cam.php', 'templates/dashboard-vendor.php' ) ) ) {
+        wp_enqueue_script( 'jquery-ui-sortable' );
+        
+        wp_enqueue_style(
+            'common-elements-dashboard',
+            get_template_directory_uri() . '/assets/css/dashboard.css',
+            array(),
+            COMMON_ELEMENTS_THEME_VERSION
+        );
+        
+        wp_localize_script( 'common-elements-main', 'ceDashboard', array(
+            'dashboardType' => common_elements_get_dashboard_type(),
+            'userId'        => get_current_user_id(),
+        ));
+    }
+}
+
+/**
+ * Dashboard header function
+ */
+function common_elements_dashboard_header() {
+    $dashboard_type = common_elements_get_dashboard_type();
+    $user = wp_get_current_user();
+    
+    ?>
+    <div class="ce-dashboard-header">
+        <div class="container">
+            <div class="ce-dashboard-header-inner">
+                <div class="ce-dashboard-welcome">
+                    <h2><?php printf( esc_html__( 'Welcome, %s', 'common-elements' ), esc_html( $user->display_name ) ); ?></h2>
+                    <p class="ce-dashboard-role">
+                        <?php 
+                        switch ( $dashboard_type ) {
+                            case 'board':
+                                esc_html_e( 'Board Member Dashboard', 'common-elements' );
+                                break;
+                            case 'cam':
+                                esc_html_e( 'CAM Dashboard', 'common-elements' );
+                                break;
+                            case 'vendor':
+                                esc_html_e( 'Vendor Dashboard', 'common-elements' );
+                                break;
+                            default:
+                                esc_html_e( 'Dashboard', 'common-elements' );
+                        }
+                        ?>
+                    </p>
+                </div>
+                
+                <div class="ce-dashboard-actions">
+                    <a href="#" class="ce-dashboard-add-widget-button">
+                        <i class="fas fa-plus-circle"></i> <?php esc_html_e( 'Add Widget', 'common-elements' ); ?>
+                    </a>
+                    <div class="ce-dashboard-add-widget-dropdown">
+                        <ul>
+                            <li><a href="#" data-widget-type="recent_activity"><i class="fas fa-bell"></i> <?php esc_html_e( 'Recent Activity', 'common-elements' ); ?></a></li>
+                            <li><a href="#" data-widget-type="upcoming_events"><i class="fas fa-calendar"></i> <?php esc_html_e( 'Upcoming Events', 'common-elements' ); ?></a></li>
+                            <li><a href="#" data-widget-type="user_stats"><i class="fas fa-chart-bar"></i> <?php esc_html_e( 'User Statistics', 'common-elements' ); ?></a></li>
+                            <?php if ( 'board' === $dashboard_type ) : ?>
+                                <li><a href="#" data-widget-type="board_documents"><i class="fas fa-file-alt"></i> <?php esc_html_e( 'Board Documents', 'common-elements' ); ?></a></li>
+                                <li><a href="#" data-widget-type="financial_summary"><i class="fas fa-dollar-sign"></i> <?php esc_html_e( 'Financial Summary', 'common-elements' ); ?></a></li>
+                            <?php elseif ( 'cam' === $dashboard_type ) : ?>
+                                <li><a href="#" data-widget-type="property_list"><i class="fas fa-building"></i> <?php esc_html_e( 'Property List', 'common-elements' ); ?></a></li>
+                                <li><a href="#" data-widget-type="maintenance_requests"><i class="fas fa-tools"></i> <?php esc_html_e( 'Maintenance Requests', 'common-elements' ); ?></a></li>
+                            <?php elseif ( 'vendor' === $dashboard_type ) : ?>
+                                <li><a href="#" data-widget-type="active_contracts"><i class="fas fa-file-contract"></i> <?php esc_html_e( 'Active Contracts', 'common-elements' ); ?></a></li>
+                                <li><a href="#" data-widget-type="payment_history"><i class="fas fa-money-bill-wave"></i> <?php esc_html_e( 'Payment History', 'common-elements' ); ?></a></li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
 }

@@ -1,0 +1,511 @@
+/**
+ * Dashboard CSS
+ *
+ * Styles for the Common Elements dashboard system.
+ */
+
+/* Dashboard Header */
+.ce-dashboard-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.ce-dashboard-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ce-dashboard-welcome h2 {
+    margin: 0 0 5px;
+    font-size: 24px;
+    color: #0063CE;
+}
+
+.ce-dashboard-role {
+    margin: 0;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.ce-dashboard-actions {
+    position: relative;
+}
+
+.ce-dashboard-add-widget-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #0063CE;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.ce-dashboard-add-widget-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+    text-decoration: none;
+}
+
+.ce-dashboard-add-widget-button i {
+    margin-right: 8px;
+}
+
+.ce-dashboard-add-widget-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    display: none;
+    margin-top: 10px;
+}
+
+.ce-dashboard-add-widget-button:focus + .ce-dashboard-add-widget-dropdown,
+.ce-dashboard-add-widget-dropdown:hover {
+    display: block;
+}
+
+.ce-dashboard-add-widget-dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ce-dashboard-add-widget-dropdown li {
+    margin: 0;
+    padding: 0;
+}
+
+.ce-dashboard-add-widget-dropdown a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #495057;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.ce-dashboard-add-widget-dropdown a:hover {
+    background-color: #f8f9fa;
+    color: #0063CE;
+}
+
+.ce-dashboard-add-widget-dropdown i {
+    margin-right: 10px;
+    color: #0063CE;
+    width: 16px;
+    text-align: center;
+}
+
+/* Dashboard Layout */
+.ce-dashboard-layout {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.ce-dashboard-sidebar {
+    width: 100%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.ce-dashboard-content {
+    width: 100%;
+    padding: 0 15px;
+}
+
+.ce-dashboard-columns {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.ce-dashboard-column {
+    width: 100%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+/* Dashboard Widgets */
+.ce-dashboard-widgets-container {
+    min-height: 100px;
+}
+
+.ce-dashboard-widget {
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.ce-dashboard-widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.ce-dashboard-widget-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0063CE;
+}
+
+.ce-dashboard-widget-actions {
+    display: flex;
+    align-items: center;
+}
+
+.ce-dashboard-widget-toggle,
+.ce-dashboard-widget-settings,
+.ce-dashboard-widget-remove {
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.ce-dashboard-widget-toggle:hover,
+.ce-dashboard-widget-settings:hover,
+.ce-dashboard-widget-remove:hover {
+    color: #0063CE;
+}
+
+.ce-dashboard-widget-content {
+    padding: 15px;
+}
+
+.ce-dashboard-widget-placeholder {
+    border: 2px dashed #e9ecef;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+/* Widget Settings Modal */
+.ce-dashboard-widget-settings-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ce-dashboard-widget-settings-content {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.ce-dashboard-widget-settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.ce-dashboard-widget-settings-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.ce-dashboard-widget-settings-close {
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.ce-dashboard-widget-settings-close:hover {
+    color: #0063CE;
+}
+
+.ce-dashboard-widget-settings-body {
+    padding: 15px;
+}
+
+.ce-dashboard-widget-settings-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+    border-top: 1px solid #e9ecef;
+}
+
+.ce-widget-settings-save,
+.ce-widget-settings-cancel {
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ce-widget-settings-save {
+    background-color: #0063CE;
+    color: #fff;
+    border: 1px solid #0063CE;
+    margin-left: 10px;
+}
+
+.ce-widget-settings-save:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.ce-widget-settings-cancel {
+    background-color: #fff;
+    color: #6c757d;
+    border: 1px solid #ced4da;
+}
+
+.ce-widget-settings-cancel:hover {
+    background-color: #f8f9fa;
+}
+
+/* Widget Form Elements */
+.ce-widget-form-group {
+    margin-bottom: 15px;
+}
+
+.ce-widget-form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.ce-widget-form-input,
+.ce-widget-form-select,
+.ce-widget-form-textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: border-color 0.2s;
+}
+
+.ce-widget-form-input:focus,
+.ce-widget-form-select:focus,
+.ce-widget-form-textarea:focus {
+    border-color: #0063CE;
+    outline: none;
+}
+
+.ce-widget-form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.ce-widget-form-checkbox {
+    margin-right: 5px;
+}
+
+/* Widget Types */
+.ce-recent-activity .activity-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.ce-recent-activity .activity-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.ce-recent-activity .activity-item:last-child {
+    border-bottom: none;
+}
+
+.ce-recent-activity .activity-icon {
+    margin-right: 10px;
+    color: #0063CE;
+    font-size: 16px;
+}
+
+.ce-recent-activity .activity-content {
+    flex: 1;
+}
+
+.ce-recent-activity .activity-text {
+    margin: 0 0 5px;
+}
+
+.ce-recent-activity .activity-time {
+    margin: 0;
+    font-size: 12px;
+    color: #6c757d;
+}
+
+.ce-upcoming-events .events-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.ce-upcoming-events .event-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.ce-upcoming-events .event-item:last-child {
+    border-bottom: none;
+}
+
+.ce-upcoming-events .event-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #0063CE;
+    color: #fff;
+    border-radius: 4px;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.ce-upcoming-events .event-day {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.ce-upcoming-events .event-month {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.ce-upcoming-events .event-content {
+    flex: 1;
+}
+
+.ce-upcoming-events .event-title {
+    margin: 0 0 5px;
+    font-size: 16px;
+}
+
+.ce-upcoming-events .event-time,
+.ce-upcoming-events .event-location {
+    margin: 0;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.ce-user-stats .stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.ce-user-stats .stat-item {
+    flex: 1;
+    min-width: 120px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.ce-user-stats .stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 99, 206, 0.1);
+    color: #0063CE;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    font-size: 20px;
+}
+
+.ce-user-stats .stat-content {
+    text-align: center;
+}
+
+.ce-user-stats .stat-value {
+    margin: 0 0 5px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0063CE;
+}
+
+.ce-user-stats .stat-label {
+    margin: 0;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .ce-dashboard-sidebar {
+        width: 30%;
+    }
+    
+    .ce-dashboard-content {
+        width: 70%;
+    }
+    
+    .ce-dashboard-column {
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .ce-dashboard-column {
+        width: 33.333%;
+    }
+}
+
+@media (max-width: 767px) {
+    .ce-dashboard-header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .ce-dashboard-actions {
+        margin-top: 15px;
+        align-self: flex-start;
+    }
+    
+    .ce-dashboard-add-widget-dropdown {
+        left: 0;
+        right: auto;
+    }
+}
