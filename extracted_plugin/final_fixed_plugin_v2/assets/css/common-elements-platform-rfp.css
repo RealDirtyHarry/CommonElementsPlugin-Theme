@@ -1,0 +1,561 @@
+/**
+ * RFP System CSS
+ * 
+ * Styles for the Common Elements RFP system.
+ */
+
+/* RFP List */
+.ce-rfp-list {
+    margin-bottom: 30px;
+}
+
+.ce-rfp-filter {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.ce-rfp-filter-item {
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.ce-rfp-filter-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.ce-rfp-filter select {
+    min-width: 150px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.ce-rfp-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ce-rfp-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ce-rfp-item-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ce-rfp-item-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.ce-rfp-item-title a {
+    color: #0063CE;
+    text-decoration: none;
+}
+
+.ce-rfp-item-title a:hover {
+    text-decoration: underline;
+}
+
+.ce-rfp-item-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.ce-rfp-item-status-open {
+    background-color: #e6f7ed;
+    color: #0a8043;
+}
+
+.ce-rfp-item-status-closed {
+    background-color: #fbe9e7;
+    color: #c62828;
+}
+
+.ce-rfp-item-status-pending {
+    background-color: #fff8e1;
+    color: #ff8f00;
+}
+
+.ce-rfp-item-content {
+    padding: 15px 20px;
+}
+
+.ce-rfp-item-meta {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.ce-rfp-item-meta-item {
+    margin-right: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.ce-rfp-item-meta-label {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.ce-rfp-item-description {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.ce-rfp-item-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.ce-rfp-item-category {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    background-color: #e3f2fd;
+    color: #0063CE;
+}
+
+.ce-rfp-item-proposals {
+    font-size: 14px;
+    color: #666;
+}
+
+/* RFP Detail */
+.ce-rfp-detail {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.ce-rfp-detail-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.ce-rfp-detail-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    color: #0063CE;
+}
+
+.ce-rfp-detail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.ce-rfp-detail-meta-item {
+    margin-right: 20px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.ce-rfp-detail-meta-label {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.ce-rfp-detail-status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.ce-rfp-detail-content {
+    padding: 20px;
+}
+
+.ce-rfp-detail-section {
+    margin-bottom: 20px;
+}
+
+.ce-rfp-detail-section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.ce-rfp-detail-attachments {
+    margin-top: 20px;
+}
+
+.ce-rfp-detail-attachment {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.ce-rfp-detail-attachment-icon {
+    margin-right: 10px;
+    color: #0063CE;
+}
+
+.ce-rfp-detail-attachment-name {
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.ce-rfp-detail-attachment-download {
+    color: #0063CE;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.ce-rfp-detail-attachment-download:hover {
+    text-decoration: underline;
+}
+
+/* RFP Form */
+.ce-rfp-form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.ce-rfp-form-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 20px;
+    color: #0063CE;
+}
+
+.ce-rfp-form-group {
+    margin-bottom: 20px;
+}
+
+.ce-rfp-form-label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.ce-rfp-form-input,
+.ce-rfp-form-textarea,
+.ce-rfp-form-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.ce-rfp-form-input:focus,
+.ce-rfp-form-textarea:focus,
+.ce-rfp-form-select:focus {
+    border-color: #0063CE;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 99, 206, 0.2);
+}
+
+.ce-rfp-form-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.ce-rfp-form-help {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.ce-rfp-form-required {
+    color: #c62828;
+    margin-left: 5px;
+}
+
+.ce-form-error {
+    border-color: #c62828 !important;
+}
+
+.ce-form-error-message {
+    color: #c62828;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+.ce-file-upload {
+    margin-bottom: 10px;
+}
+
+.ce-file-upload-input {
+    display: none;
+}
+
+.ce-file-upload-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ce-file-upload-button:hover {
+    background-color: #f0f0f0;
+    border-color: #0063CE;
+    color: #0063CE;
+}
+
+.ce-file-preview {
+    margin-top: 10px;
+}
+
+.ce-file-info {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.ce-file-name {
+    flex-grow: 1;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.ce-file-size {
+    font-size: 12px;
+    color: #666;
+}
+
+.ce-file-error {
+    color: #c62828;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.ce-rfp-form-submit {
+    background-color: #0063CE;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 24px;
+    transition: background-color 0.2s ease;
+}
+
+.ce-rfp-form-submit:hover {
+    background-color: #0052a8;
+}
+
+.ce-rfp-form-cancel {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #666;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 24px;
+    margin-right: 10px;
+    transition: all 0.2s ease;
+}
+
+.ce-rfp-form-cancel:hover {
+    background-color: #f9f9f9;
+    border-color: #ccc;
+}
+
+/* Proposal List */
+.ce-proposal-list {
+    margin-bottom: 30px;
+}
+
+.ce-proposal-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.ce-proposal-item-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ce-proposal-item-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.ce-proposal-item-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.ce-proposal-item-status-pending {
+    background-color: #fff8e1;
+    color: #ff8f00;
+}
+
+.ce-proposal-item-status-accepted {
+    background-color: #e6f7ed;
+    color: #0a8043;
+}
+
+.ce-proposal-item-status-rejected {
+    background-color: #fbe9e7;
+    color: #c62828;
+}
+
+.ce-proposal-item-content {
+    padding: 15px 20px;
+}
+
+.ce-proposal-item-meta {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.ce-proposal-item-meta-item {
+    margin-right: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.ce-proposal-item-meta-label {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.ce-proposal-item-description {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.ce-proposal-item-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.ce-proposal-item-action {
+    margin-left: 10px;
+}
+
+.ce-proposal-accept {
+    background-color: #0a8043;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    transition: background-color 0.2s ease;
+}
+
+.ce-proposal-accept:hover {
+    background-color: #097139;
+}
+
+.ce-proposal-reject {
+    background-color: #c62828;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    transition: background-color 0.2s ease;
+}
+
+.ce-proposal-reject:hover {
+    background-color: #b71c1c;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .ce-rfp-item-header,
+    .ce-rfp-item-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .ce-rfp-item-status,
+    .ce-rfp-item-proposals {
+        margin-top: 10px;
+    }
+    
+    .ce-rfp-detail-meta {
+        flex-direction: column;
+    }
+    
+    .ce-rfp-detail-meta-item {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .ce-proposal-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .ce-proposal-item-status {
+        margin-top: 10px;
+    }
+}

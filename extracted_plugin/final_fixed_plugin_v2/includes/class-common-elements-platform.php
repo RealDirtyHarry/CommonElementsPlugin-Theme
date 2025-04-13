@@ -140,6 +140,11 @@ class Common_Elements_Platform {
                 require_once COMMON_ELEMENTS_PLATFORM_DIR . 'includes/class-common-elements-platform-dashboard.php';
 
                 /**
+                 * The class responsible for dashboard widget management.
+                 */
+                require_once COMMON_ELEMENTS_PLATFORM_DIR . 'includes/class-common-elements-platform-dashboard-widget-manager.php';
+
+                /**
                  * The class responsible for RFP system functionality.
                  */
                 require_once COMMON_ELEMENTS_PLATFORM_DIR . 'includes/class-common-elements-platform-rfp.php';
@@ -255,7 +260,14 @@ class Common_Elements_Platform {
                 $plugin_dashboard = new Common_Elements_Platform_Dashboard();
                 $this->loader->add_action( 'init', $plugin_dashboard, 'register_dashboard_endpoints' );
                 $this->loader->add_action( 'wp_ajax_get_dashboard_data', $plugin_dashboard, 'get_dashboard_data' );
-
+                
+                $widget_manager = new Common_Elements_Platform_Dashboard_Widget_Manager();
+                $this->loader->add_action( 'wp_ajax_ce_ajax_save_widget_position', $widget_manager, 'ajax_save_widget_position' );
+                $this->loader->add_action( 'wp_ajax_ce_ajax_get_widget_settings', $widget_manager, 'ajax_get_widget_settings' );
+                $this->loader->add_action( 'wp_ajax_ce_ajax_save_widget_settings', $widget_manager, 'ajax_save_widget_settings' );
+                $this->loader->add_action( 'wp_ajax_ce_ajax_add_widget', $widget_manager, 'ajax_add_widget' );
+                $this->loader->add_action( 'wp_ajax_ce_ajax_remove_widget', $widget_manager, 'ajax_remove_widget' );
+                $this->loader->add_action( 'wp_ajax_ce_ajax_refresh_widget', $widget_manager, 'ajax_refresh_widget' );
         }
 
         /**

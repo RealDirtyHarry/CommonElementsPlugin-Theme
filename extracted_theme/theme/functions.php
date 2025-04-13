@@ -174,10 +174,12 @@ add_action( 'widgets_init', 'common_elements_widgets_init' );
 function common_elements_scripts() {
 	// Enqueue main stylesheet
 	wp_enqueue_style( 'common-elements-style', get_stylesheet_uri(), array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
-	
+
 	// Enqueue Google Fonts
 	wp_enqueue_style( 'common-elements-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap', array(), null );
-	
+su
+	wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0' );
+
 	$suffix = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min';
 	$nav_js_path = '/js/navigation' . $suffix . '.js';
 	$main_js_path = '/js/main' . $suffix . '.js';
@@ -186,13 +188,19 @@ function common_elements_scripts() {
 
 	// Enqueue main JavaScript file
 	if ( file_exists( $nav_js_file_path ) ) {
-		wp_enqueue_script( 'common-elements-navigation', COMMON_ELEMENTS_THEME_URI . $nav_js_path, array(), filemtime( $nav_js_file_path ), true );
+		wp_enqueue_script( 'common-elements-navigation', COMMON_ELEMENTS_THEME_URI . $nav_js_path, array('jquery'), filemtime( $nav_js_file_path ), true );
 	}
 
 	// Enqueue custom JavaScript file
 	if ( file_exists( $main_js_file_path ) ) {
 		wp_enqueue_script( 'common-elements-main', COMMON_ELEMENTS_THEME_URI . $main_js_path, array('jquery'), filemtime( $main_js_file_path ), true );
 	}
+
+	wp_localize_script( 'common-elements-main', 'commonElementsTheme', array(
+		'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+		'siteUrl' => site_url(),
+		'nonce'   => wp_create_nonce( 'common-elements-theme-nonce' ),
+	));
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
