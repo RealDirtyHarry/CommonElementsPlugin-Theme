@@ -165,6 +165,11 @@ class Common_Elements_Platform {
                 require_once COMMON_ELEMENTS_PLATFORM_DIR . 'includes/class-common-elements-platform-forum.php';
 
                 /**
+                 * The class responsible for learning functionality.
+                 */
+                require_once COMMON_ELEMENTS_PLATFORM_DIR . 'includes/class-common-elements-platform-learning.php';
+
+                /**
                  * The class responsible for membership functionality.
                  */
                 require_once COMMON_ELEMENTS_PLATFORM_DIR . 'includes/class-common-elements-platform-membership.php';
@@ -348,6 +353,17 @@ class Common_Elements_Platform {
          * @access   private
          */
         private function define_learning_hooks() {
+                $plugin_learning = new Common_Elements_Platform_Learning();
+                $this->loader->add_action( 'init', $plugin_learning, 'register_learning_post_types' );
+                $this->loader->add_action( 'init', $plugin_learning, 'register_learning_taxonomies' );
+                $this->loader->add_action( 'init', $plugin_learning, 'register_learning_endpoints' );
+                $this->loader->add_action( 'add_meta_boxes', $plugin_learning, 'add_learning_meta_boxes' );
+                $this->loader->add_action( 'save_post_course', $plugin_learning, 'save_course_meta_box_data' );
+                $this->loader->add_action( 'save_post_lesson', $plugin_learning, 'save_lesson_meta_box_data' );
+                $this->loader->add_action( 'save_post_quiz', $plugin_learning, 'save_quiz_meta_box_data' );
+                $this->loader->add_action( 'wp_ajax_enroll_course', $plugin_learning, 'enroll_course' );
+                $this->loader->add_action( 'wp_ajax_complete_lesson', $plugin_learning, 'complete_lesson' );
+                $this->loader->add_action( 'wp_ajax_submit_quiz', $plugin_learning, 'submit_quiz' );
         }
 
 
